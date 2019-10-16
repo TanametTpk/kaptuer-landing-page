@@ -19,11 +19,11 @@
 }
 
 @font-face {
-    @include load_font('Mirt', 400, '../fonts/Mitr-Regular.ttf');
+    @include load_font('Mirt', 400, '/fonts/Mitr-Regular.ttf');
  }
 
 @font-face {
-    @include load_font('Mirt', 700, '../fonts/Mitr-Bold.ttf');
+    @include load_font('Mirt', 700, '/fonts/Mitr-Bold.ttf');
 }
 
 body{

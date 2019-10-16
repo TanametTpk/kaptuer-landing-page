@@ -7,7 +7,7 @@ const CustomButton = (props) =>{
 
     let buttonClass = props.primary ? "button primary" : "button"
     // concat string to avoid warning
-    let link = props.href ? props.href : "javascript".concat(":void(0);")
+    let link = props.href ? props.href : ""
 
     return(
         <HeaderItem style={{ padding:'10px' }}>
@@ -54,7 +54,7 @@ const KaptuerHeader = (props) => {
 
             <HeaderZone paddingLeft="50px">
                 <HeaderItem justifyContent={"start"} >
-                    <CircleImage src={props.logo} alt={"logo"}/>
+                    {/* <Logo fill="red" /> */}
                 </HeaderItem>
             </HeaderZone>
 
@@ -72,7 +72,7 @@ export const DevHeader = (props) => {
 
             <HeaderZone paddingLeft="50px">
                 <HeaderItem justifyContent={"start"} >
-                    <CircleImage src={props.logo} alt={"logo"}/>
+                    {/* <Logo fill="red" /> */}
                 </HeaderItem>
             </HeaderZone>
 
