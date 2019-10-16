@@ -15,6 +15,8 @@ const login = async (payload, errorHandler) => {
 
     let res = await axios.post(USER + "/user/validate" , payload).catch(executeHandler(errorHandler))
 
+    if (!res) return res
+
     let token = res.data.token
 
     // save token
