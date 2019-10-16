@@ -35,8 +35,16 @@ const logout = () => {
 
 }
 
+const isLogin = () => {
+
+    let token = Authorizor.loadToken()
+    return token ? token.length > 0 : false
+
+}
+
 export default {
     createUser,
     login,
     logout,
+    isLogin
 }

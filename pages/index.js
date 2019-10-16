@@ -15,20 +15,20 @@ import signable from '../util/api/libs/signable'
 import API from '../configs/apis'
 import { connect } from 'react-redux'
 import { logIn } from '../store/actions/user'
-import { useFormHandle, useScrollY, useModal } from '../util/hooks'
-import Register from '../layouts/Regis'
+import { useScrollY, useModal } from '../util/hooks'
+import Router from 'next/router'
 
 import '../assets/css/main.css'
 
 // get information to display in that language
 // TODO - change this to ssr
-const information = require('../assets/info').en
+const information = require('../assets/info').th
 Modal.setAppElement('#__next')
 
 let buttons = [
     {
         key:"signup",
-        href:"",
+        href:"/signup",
         text:"signup",
         primary:false
     },
@@ -54,11 +54,6 @@ const LandingPage = (props) => {
 
     let [loginModal, openLogin, closeLogin] = useModal()
     let [signupModal, openSignup, closeSignup] = useModal()
-
-    const [user, handleFormChange] = useFormHandle({
-        email: "",
-        password: "",
-    });
     
     const login = async (payload, method) => {
 
@@ -70,7 +65,7 @@ const LandingPage = (props) => {
     
     useEffect(() => {
 
-        // if (props.user.isLogin) window.location.href = API.APP;
+        if (props.user.isLogin) window.location.href = API.APP;
     
     })
 
@@ -140,7 +135,7 @@ const LandingPage = (props) => {
 
                     {/* main input */}
                     <div className="Login-signup-form">
-                        <Input placeholder="name@company.com" onChange={onInputEmailChange} />
+                        {/* <Input placeholder="name@company.com" onChange={onInputEmailChange} /> */}
                         <Button customStyle={{ margin: "0px 12px" }} href="/signup" text={information.LANDING_MAIN_SIGNUP_BUTTON} primary />
                     </div>
 
@@ -172,7 +167,7 @@ const LandingPage = (props) => {
 
                 {/* modal input */}
                 <div className="Login-signup-form">
-                    <Input placeholder="name@company.com" onChange={onInputEmailChange} />
+                    {/* <Input placeholder="name@company.com" onChange={onInputEmailChange} /> */}
                     <Button customStyle={{ margin: "0px 12px" }} href="/signup" text={information.LANDING_MAIN_SIGNUP_BUTTON} primary />
                 </div>
 
@@ -206,13 +201,13 @@ const LandingPage = (props) => {
                 <GridCol gap="20px" customStyle={{margin:"25px 0px"}} >
 
                     <FacebookLogin
-                        appId="458064678311812"
+                        appId={FB_TOKEN}
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={(res)=>login(res,"FacebookSign")} />
 
                     <GoogleLogin
-                        clientId="334399017995-ciok6m57onhc5u54o7sqdamhi00agt7a.apps.googleusercontent.com"
+                        clientId={GOOGLE_TOKEN}
                         buttonText="Login"
                         onSuccess={(res)=>login(res,"GoogleSign")}
                         cookiePolicy={'single_host_origin'} />

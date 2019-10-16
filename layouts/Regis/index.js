@@ -8,6 +8,8 @@ import api from '../../util/api'
 import signable from '../../util/api/libs/signable'
 import { useFormHandle } from '../../util/hooks'
 
+import Link from 'next/link'
+
 function Regis() {
 
   const [user, handleFormChange] = useFormHandle({
@@ -46,16 +48,15 @@ function Regis() {
           </Form>
           <Row>
             <Col className="d-flex flex-column">
-              <Button className="mx-3 mb-2" onClick={() => registration(user, "LocalSign")}>regist</Button>
-              <Button variant="outline-primary" className="mx-3 mb-2" onClick={() => history.push("/")}>back to login</Button>
+              <Button className="mx-3 mb-2" onClick={() => registration(user, "LocalSign")}>signup</Button>
+              <Link href="/"><Button variant="outline-primary" className="mx-3 mb-2" >back to login</Button></Link>
               <FacebookLogin
                 appId={FB_TOKEN}
                 autoLoad={false}
                 fields="name,email,picture"
-                onClick={() => console.log("clicked")}
                 callback={(response) => registration(response, "FacebookSign")}
                 render={renderProps => (
-                  <Button variant="facebook" className="mx-3 mb-2" onClick={renderProps.onClick}>regist with Facebook</Button>
+                  <Button variant="facebook" className="mx-3 mb-2" onClick={renderProps.onClick}>signup with Facebook</Button>
                 )}
               />
               <GoogleLogin
@@ -65,7 +66,7 @@ function Regis() {
                 onFailure={(response) => console.log(response)}
                 cookiePolicy={'single_host_origin'}
                 render={renderProps => (
-                  <Button variant="light" className="mx-3 shadow-sm" onClick={renderProps.onClick}>regist with Google</Button>
+                  <Button variant="light" className="mx-3 shadow-sm" onClick={renderProps.onClick}>signup with Google</Button>
                 )}
               />
             </Col>
