@@ -13,8 +13,8 @@ import LoginForm from '../components/custom/LoginForm'
 import { FB_TOKEN, GOOGLE_TOKEN } from '../configs/oauth'
 import signable from '../util/api/libs/signable'
 import API from '../configs/apis'
-// import { connect } from 'react-redux'
-// import { logIn } from '../store/actions/user'
+import { connect } from 'react-redux'
+import { logIn } from '../store/actions/user'
 import { useFormHandle, useScrollY } from '../util/hooks'
 import '../assets/css/main.css'
 
@@ -271,5 +271,12 @@ const LandingPage = (props) => {
     )
 }
 
-export default LandingPage
-// export default connect(mapStateToProps, mapDispatchToProps)(Login)
+const mapStateToProps = (state) => ({
+    user:state.user
+})
+
+const mapDispatchToProps = {
+    logIn
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)
