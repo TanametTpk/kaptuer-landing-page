@@ -30,7 +30,7 @@ const logout = () => {
 
     // remove token
     Authorizor.clear()
-    console.log("logout")
+
 }
 
 export default {

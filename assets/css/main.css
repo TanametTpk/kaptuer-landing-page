@@ -664,7 +664,7 @@ a.button.primary:hover {
   font-family: "Mirt";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/Mitr-Regular.ttf") format("truetype");
+  src: url("/fonts/Mitr-Regular.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
 
@@ -672,7 +672,7 @@ a.button.primary:hover {
   font-family: "Mirt";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/Mitr-Bold.ttf") format("truetype");
+  src: url("/fonts/Mitr-Bold.ttf") format("truetype");
   /* Safari, Android, iOS */
 }
 
