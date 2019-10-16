@@ -28,8 +28,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "start": "next start -p $PORT"
   },
   "keywords": [],
   "author": "",
