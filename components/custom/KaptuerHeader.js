@@ -7,7 +7,7 @@ const CustomButton = (props) =>{
 
     let buttonClass = props.primary ? "button primary" : "button"
     // concat string to avoid warning
-    let link = props.href ? props.href : "javascript".concat(":void(0);")
+    let link = props.href ? props.href : ""
 
     return(
         <HeaderItem style={{ padding:'10px' }}>

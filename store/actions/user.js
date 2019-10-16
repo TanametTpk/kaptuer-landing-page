@@ -4,7 +4,7 @@ import API from '../../util/api'
 export const logIn = (payload) => async dispatch => {
 
   let res = await API.user.login(payload)
-  if (res.status !== 200 ) return false
+  if (!res) return false
   else {
     dispatch({
       type: LOGIN,

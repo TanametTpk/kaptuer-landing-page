@@ -1,11 +1,12 @@
 import { LOGIN, LOGOUT } from '../types'
+import API from '../../util/api'
 
 const initialState = {
   id: "",
   name: "",
   email: "",
   provider_type: "",
-  isLogin: false,
+  isLogin: API.user.isLogin(),
 }
 
 export default function (state = initialState, action) {

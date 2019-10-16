@@ -1,14 +1,17 @@
+import Cookies from 'universal-cookie';
 const TOKEN = "jwtToken"
+
+const cookies = new Cookies();
 
 const save = (value) => {
 
-    localStorage.setItem(TOKEN, value)
+    cookies.set(TOKEN, value, { path: '/' , domain: ".kaptuer.com" });
 
 }
 
-const load = () => localStorage.getItem(TOKEN)
+const load = () => cookies.get(TOKEN)
 
-const clear = () => localStorage.removeItem(TOKEN)
+const clear = () => cookies.remove(TOKEN)
 
 export default {
 

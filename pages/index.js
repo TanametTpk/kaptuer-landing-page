@@ -12,52 +12,23 @@ import { TitleSeperateLine } from '../components/SeperateLine'
 import LoginForm from '../components/custom/LoginForm'
 import { FB_TOKEN, GOOGLE_TOKEN } from '../configs/oauth'
 import signable from '../util/api/libs/signable'
-// import { logIn } from '../store/actions/user'
-import { useFormHandle, useScrollY } from '../util/hooks'
+import API from '../configs/apis'
+import { connect } from 'react-redux'
+import { logIn } from '../store/actions/user'
+import { useScrollY, useModal } from '../util/hooks'
+import Router from 'next/router'
+
 import '../assets/css/main.css'
 
 // get information to display in that language
 // TODO - change this to ssr
-const information = require('../assets/info').en
+const information = require('../assets/info').th
 Modal.setAppElement('#__next')
 
 let buttons = [
-    // {
-    //     key:"home",
-    //     href:"/home",
-    //     text:"home",
-    //     primary:false
-    // },
-    // {
-    //     key:"menu",
-    //     text:"menu",
-    //     contents:[
-    //         {
-    //             key:"c1",
-    //             text:"choice 1",
-    //             href:"/choice1"
-    //         },
-    //         {
-    //             key:"c2",
-    //             text:"choice 2",
-    //             href:"/choice2"
-    //         },
-    //         {
-    //             key:"c3",
-    //             text:"choice 3",
-    //             href:"/choice3"
-    //         },
-    //     ]
-    // },
-    // {
-    //     key:"pricing",
-    //     href:"/pricing",
-    //     text:"pricing",
-    //     primary:false
-    // },
     {
         key:"signup",
-        href:"",
+        href:"/signup",
         text:"signup",
         primary:false
     },
@@ -79,29 +50,34 @@ const LandingPage = (props) => {
 
     let [state, setState] = useState({
         email:"",
-        modalSingupIsOpen: false,
-        modalLoginIsOpen: false,
     })
 
-    // const [user, handleFormChange] = useFormHandle({
-    //     email: "",
-    //     password: "",
-    // });
+    let [loginModal, openLogin, closeLogin] = useModal()
+    let [signupModal, openSignup, closeSignup] = useModal()
     
-    // const login = async (payload, method) => {
-    //     if (await props.logIn(signable[method](payload))) {
-    //         history.push("/applications")
-    //     }
-    // }
+    const login = async (payload, method) => {
+
+        if (await props.logIn(signable[method](payload))) {
+            window.location.href = API.APP;
+        }
+
+    }
+    
+    useEffect(() => {
+
+        if (props.user.isLogin) window.location.href = API.APP;
+    
+    })
 
     const headerButtonOnClick = ( key ) => {
         
         if(key === "signup"){
             // open sign-up modal
-            openSignupModal()
+            // openSignup()
         }
         else if(key === "login"){
-            openLoginModel()
+            // openLoginModel()
+            openLogin()
         }
 
     }
@@ -114,64 +90,27 @@ const LandingPage = (props) => {
         
     }
 
+    // ********************   just open close modal    ********************************
+
     const openLoginModel = () => {
-        closeSignupModal()
-        setState({...state, modalLoginIsOpen: true});
+        closeSignup()
+        openLogin()
     }
 
     const closeLoginModal = () => {
-        setState({...state, modalLoginIsOpen: false});
+        closeLogin()
     }
 
     const openSignupModal = () => {
-        closeLoginModal()
-        setState({...state, modalSingupIsOpen: true});
+        closeLogin()
+        openSignup()
     }
 
     const closeSignupModal = () => {
-        setState({...state, modalSingupIsOpen: false});
+        closeSignup()
     }
 
-    const login = (res, type) => {
-        // define
-        let email = null;
-        let password = null;
-        let name = null;
-        let token = null;
-        let picture = null;
-
-        switch (type) {
-
-            case "facebook":
-                // console.log(res);
-                email = res.email;
-                name = res.name;
-                token = res.accessToken;
-                picture = res.picture.data.url;
-                break;
-
-            case "google":
-                // console.log(res);
-                email = res.profileObj.email;
-                name = res.profileObj.name;
-                token = res.tokenObj.access_token;
-                picture = res.profileObj.imageUrl;
-                break;
-
-            case "local":
-                email = res.email;
-                password = res.password;
-                break;
-                
-            default:
-                // else
-                break;
-        }
-
-        let payload = { email, name, token, picture , password , type }
-        console.log(payload);
-
-    }
+    // ********************************************************************************
 
     // check scrolling for display shadow of header
     const shadow = currentY <= 50 ? false : true
@@ -196,7 +135,7 @@ const LandingPage = (props) => {
 
                     {/* main input */}
                     <div className="Login-signup-form">
-                        <Input placeholder="name@company.com" onChange={onInputEmailChange} />
+                        {/* <Input placeholder="name@company.com" onChange={onInputEmailChange} /> */}
                         <Button customStyle={{ margin: "0px 12px" }} href="/signup" text={information.LANDING_MAIN_SIGNUP_BUTTON} primary />
                     </div>
 
@@ -206,7 +145,7 @@ const LandingPage = (props) => {
             {/* signup modal */}
             <Modal
                 closeTimeoutMS={180}
-                isOpen={state.modalSingupIsOpen}
+                isOpen={signupModal}
                 onRequestClose={closeSignupModal}
                 contentLabel="Example Modal"
                 className="Modal-signup"
@@ -228,7 +167,7 @@ const LandingPage = (props) => {
 
                 {/* modal input */}
                 <div className="Login-signup-form">
-                    <Input placeholder="name@company.com" onChange={onInputEmailChange} />
+                    {/* <Input placeholder="name@company.com" onChange={onInputEmailChange} /> */}
                     <Button customStyle={{ margin: "0px 12px" }} href="/signup" text={information.LANDING_MAIN_SIGNUP_BUTTON} primary />
                 </div>
 
@@ -249,7 +188,7 @@ const LandingPage = (props) => {
             {/* Login modal */}
             <Modal
                 closeTimeoutMS={180}
-                isOpen={state.modalLoginIsOpen}
+                isOpen={loginModal}
                 onRequestClose={closeLoginModal}
                 className="Modal-login"
                 overlayClassName="Modal-Overlay-login"
@@ -262,15 +201,15 @@ const LandingPage = (props) => {
                 <GridCol gap="20px" customStyle={{margin:"25px 0px"}} >
 
                     <FacebookLogin
-                        appId="458064678311812"
+                        appId={FB_TOKEN}
                         autoLoad={false}
                         fields="name,email,picture"
-                        callback={(res)=>login(res,"facebook")} />
+                        callback={(res)=>login(res,"FacebookSign")} />
 
                     <GoogleLogin
-                        clientId="334399017995-ciok6m57onhc5u54o7sqdamhi00agt7a.apps.googleusercontent.com"
+                        clientId={GOOGLE_TOKEN}
                         buttonText="Login"
-                        onSuccess={(res)=>login(res,"google")}
+                        onSuccess={(res)=>login(res,"GoogleSign")}
                         cookiePolicy={'single_host_origin'} />
 
                 </GridCol>
@@ -279,7 +218,7 @@ const LandingPage = (props) => {
                 <TitleSeperateLine title="OR" />
 
                 {/* Login form */}
-                <LoginForm onSubmit={(res)=>login(res,"local")} />
+                <LoginForm onSubmit={(res)=>login(res,"LocalSign")} />
 
                 {/* switch to signup modal */}
                 <p style={{color:"gray"}}>Don’t have an account? <label className="hilightLink" onClick={openSignupModal} >Sign up</label></p>
@@ -290,4 +229,12 @@ const LandingPage = (props) => {
     )
 }
 
-export default LandingPage
+const mapStateToProps = (state) => ({
+    user:state.user
+})
+
+const mapDispatchToProps = {
+    logIn
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)

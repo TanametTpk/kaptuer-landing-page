@@ -15,6 +15,8 @@ const login = async (payload, errorHandler) => {
 
     let res = await axios.post(USER + "/user/validate" , payload).catch(executeHandler(errorHandler))
 
+    if (!res) return res
+
     let token = res.data.token
 
     // save token
@@ -30,11 +32,19 @@ const logout = () => {
 
     // remove token
     Authorizor.clear()
-    console.log("logout")
+
+}
+
+const isLogin = () => {
+
+    let token = Authorizor.loadToken()
+    return token ? token.length > 0 : false
+
 }
 
 export default {
     createUser,
     login,
     logout,
+    isLogin
 }
