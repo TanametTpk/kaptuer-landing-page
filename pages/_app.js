@@ -3,11 +3,15 @@ import {Provider} from "react-redux";
 import App from "next/app";
 import withRedux from "next-redux-wrapper";
 import {makeStore} from "../store";
+import Storage from '../util/api/libs/jwtStorage'
+import API from '../configs/apis'
+
+if (Storage.load()) window.location.href = API.APP;
 
 class MyApp extends App {
 
     static async getInitialProps({Component, ctx}) {
-            
+         
         return {
             pageProps: {
                 // Call page-level getInitialProps

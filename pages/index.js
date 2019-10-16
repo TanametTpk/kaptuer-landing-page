@@ -4,7 +4,7 @@ import {Button} from '../components/Button'
 import Section from '../components/Section'
 import Stack from '../components/Stack'
 import GridCol from '../components/Grid'
-import Input from '../components/Input'
+// import Input from '../components/Input'
 import Modal from 'react-modal'
 import GoogleLogin from 'react-google-login'
 import FacebookLogin from 'react-facebook-login'
@@ -16,7 +16,6 @@ import API from '../configs/apis'
 import { connect } from 'react-redux'
 import { logIn } from '../store/actions/user'
 import { useScrollY, useModal } from '../util/hooks'
-import Router from 'next/router'
 
 import '../assets/css/main.css'
 
@@ -62,12 +61,6 @@ const LandingPage = (props) => {
         }
 
     }
-    
-    useEffect(() => {
-
-        if (props.user.isLogin) window.location.href = API.APP;
-    
-    })
 
     const headerButtonOnClick = ( key ) => {
         
