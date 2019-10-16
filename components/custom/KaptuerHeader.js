@@ -54,7 +54,7 @@ const KaptuerHeader = (props) => {
 
             <HeaderZone paddingLeft="50px">
                 <HeaderItem justifyContent={"start"} >
-                    <CircleImage src={props.logo} alt={"logo"}/>
+                    {/* <Logo fill="red" /> */}
                 </HeaderItem>
             </HeaderZone>
 
@@ -72,7 +72,7 @@ export const DevHeader = (props) => {
 
             <HeaderZone paddingLeft="50px">
                 <HeaderItem justifyContent={"start"} >
-                    <CircleImage src={props.logo} alt={"logo"}/>
+                    {/* <Logo fill="red" /> */}
                 </HeaderItem>
             </HeaderZone>
 

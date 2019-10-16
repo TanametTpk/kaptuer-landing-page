@@ -10,6 +10,10 @@ import GoogleLogin from 'react-google-login'
 import FacebookLogin from 'react-facebook-login'
 import { TitleSeperateLine } from '../components/SeperateLine'
 import LoginForm from '../components/custom/LoginForm'
+import { FB_TOKEN, GOOGLE_TOKEN } from '../../configs/oauth'
+import signable from '../../util/api/libs/signable'
+import { logIn } from '../../store/actions/user'
+import { useFormHandle } from '../../util/hooks'
 import '../assets/css/main.css'
 
 // get information to display in that language
@@ -183,7 +187,7 @@ export default class LandingPage extends Component {
             <div className="Landing-page" >
 
                 {/* custom header */}
-                <KaptuerHeader logo="https://cdn.shopifycloud.com/hatchful-web/assets/6fcc76cfd1c59f44d43a485167fb3139.png" action={this.headerButtonOnClick} buttons={buttons} shadow={shadow} />
+                <KaptuerHeader logo="/logo.svg" action={this.headerButtonOnClick} buttons={buttons} shadow={shadow} />
 
                 {/* first section */}
                 <Section backgroundColor="white" height="100vh" >
