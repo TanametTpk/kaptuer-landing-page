@@ -12,6 +12,8 @@ import { TitleSeperateLine } from '../components/SeperateLine'
 import LoginForm from '../components/custom/LoginForm'
 import { FB_TOKEN, GOOGLE_TOKEN } from '../configs/oauth'
 import signable from '../util/api/libs/signable'
+import API from '../configs/apis'
+// import { connect } from 'react-redux'
 // import { logIn } from '../store/actions/user'
 import { useFormHandle, useScrollY } from '../util/hooks'
 import '../assets/css/main.css'
@@ -22,39 +24,6 @@ const information = require('../assets/info').en
 Modal.setAppElement('#__next')
 
 let buttons = [
-    // {
-    //     key:"home",
-    //     href:"/home",
-    //     text:"home",
-    //     primary:false
-    // },
-    // {
-    //     key:"menu",
-    //     text:"menu",
-    //     contents:[
-    //         {
-    //             key:"c1",
-    //             text:"choice 1",
-    //             href:"/choice1"
-    //         },
-    //         {
-    //             key:"c2",
-    //             text:"choice 2",
-    //             href:"/choice2"
-    //         },
-    //         {
-    //             key:"c3",
-    //             text:"choice 3",
-    //             href:"/choice3"
-    //         },
-    //     ]
-    // },
-    // {
-    //     key:"pricing",
-    //     href:"/pricing",
-    //     text:"pricing",
-    //     primary:false
-    // },
     {
         key:"signup",
         href:"",
@@ -83,16 +52,24 @@ const LandingPage = (props) => {
         modalLoginIsOpen: false,
     })
 
-    // const [user, handleFormChange] = useFormHandle({
-    //     email: "",
-    //     password: "",
-    // });
+    const [user, handleFormChange] = useFormHandle({
+        email: "",
+        password: "",
+    });
     
     // const login = async (payload, method) => {
+
     //     if (await props.logIn(signable[method](payload))) {
-    //         history.push("/applications")
+    //         window.location.href = API.APP;
     //     }
+
     // }
+    
+    useEffect(() => {
+
+        // if (props.user.isLogin) window.location.href = API.APP;
+    
+    })
 
     const headerButtonOnClick = ( key ) => {
         
@@ -114,6 +91,8 @@ const LandingPage = (props) => {
         
     }
 
+    // ********************   just open close modal    ********************************
+
     const openLoginModel = () => {
         closeSignupModal()
         setState({...state, modalLoginIsOpen: true});
@@ -131,6 +110,8 @@ const LandingPage = (props) => {
     const closeSignupModal = () => {
         setState({...state, modalSingupIsOpen: false});
     }
+
+    // ********************************************************************************
 
     const login = (res, type) => {
         // define
@@ -291,3 +272,4 @@ const LandingPage = (props) => {
 }
 
 export default LandingPage
+// export default connect(mapStateToProps, mapDispatchToProps)(Login)
