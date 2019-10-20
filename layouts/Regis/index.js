@@ -5,6 +5,7 @@ import { Form, Button, Row, Col, Container } from 'react-bootstrap'
 
 import { FB_TOKEN, GOOGLE_TOKEN } from '../../configs/oauth'
 import api from '../../util/api'
+import API from '../../configs/apis'
 import signable from '../../util/api/libs/signable'
 import { useFormHandle } from '../../util/hooks'
 
@@ -22,7 +23,7 @@ function Regis() {
 
     let res = await api.user.createUser(signable[method](payload), (err) => console.log(err))
     if (res.status === 200) {
-      window.location.href = api.APP;
+      window.location.href = API.APP;
     } else {
       //something happen
     }
