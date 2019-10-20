@@ -23,7 +23,8 @@ function Regis() {
 
     let res = await api.user.createUser(signable[method](payload), (err) => console.log(err))
     if (res.status === 200) {
-      window.location.href = API.APP;
+      res = await api.user.login(signable[method](payload), (err) => console.log(err))
+      if (res.status === 200) window.location.href = API.APP;
     } else {
       //something happen
     }
