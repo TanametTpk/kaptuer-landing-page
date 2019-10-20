@@ -4,6 +4,7 @@
     "scripts": {
     },
     "env": {
+      "SERVER_URL":"https://api.backend.kaptuer.com"
     },
     "formation": {
       "web": {
