@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login'
 import { Form, Button, Row, Col, Container } from 'react-bootstrap'
+import Loader from '../../components/Loader'
 
 import { FB_TOKEN, GOOGLE_TOKEN } from '../../configs/oauth'
 import api from '../../util/api'
@@ -19,16 +20,25 @@ function Regis() {
     password: "",
   });
 
+  const [isLoad, setLoad] = useState(false)
+
   const registration = async (payload, method) => {
 
     let res = await api.user.createUser(signable[method](payload), (err) => console.log(err))
     if (res.status === 200) {
+
       res = await api.user.login(signable[method](payload), (err) => console.log(err))
-      if (res.status === 200) window.location.href = API.APP;
+      if (res.status === 200){
+        window.location.href = API.APP;
+        setLoad(true)
+      }
+
     } else {
       //something happen
     }
   }
+
+  if (isLoad) return <Loader />
 
   return (
     <Container className="login-box">

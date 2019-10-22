@@ -16,6 +16,7 @@ import API from '../configs/apis'
 import { connect } from 'react-redux'
 import { logIn } from '../store/actions/user'
 import { useScrollY, useModal } from '../util/hooks'
+import Loader from '../components/Loader'
 
 import '../assets/css/main.css'
 
@@ -53,11 +54,13 @@ const LandingPage = (props) => {
 
     let [loginModal, openLogin, closeLogin] = useModal()
     let [signupModal, openSignup, closeSignup] = useModal()
+    let [isLoad, setLoad] = useState(false)
     
     const login = async (payload, method) => {
 
         if (await props.logIn(signable[method](payload))) {
             window.location.href = API.APP;
+            setLoad(true)
         }
 
     }
@@ -107,6 +110,8 @@ const LandingPage = (props) => {
 
     // check scrolling for display shadow of header
     const shadow = currentY <= 50 ? false : true
+
+    if (isLoad) return <Loader />
 
     return (
         <div className="Landing-page" >
