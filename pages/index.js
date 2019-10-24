@@ -18,6 +18,8 @@ import { logIn } from '../store/actions/user'
 import { useScrollY, useModal } from '../util/hooks'
 import Loader from '../components/Loader'
 
+import { initGA, pageView, logEvent } from '../util/analytics/ga'
+
 import '../assets/css/main.css'
 
 // get information to display in that language
@@ -52,6 +54,17 @@ const LandingPage = (props) => {
         email:"",
     })
 
+    useEffect(() => {
+        
+        // Analytic
+        if (!window.GA_INITIALIZED){
+            initGA()
+            pageView()            
+            window.GA_INITIALIZED = true
+        }
+        
+    })
+
     let [loginModal, openLogin, closeLogin] = useModal()
     let [signupModal, openSignup, closeSignup] = useModal()
     let [isLoad, setLoad] = useState(false)
@@ -70,10 +83,12 @@ const LandingPage = (props) => {
         if(key === "signup"){
             // open sign-up modal
             // openSignup()
+            logEvent("langingPage" , "nav signup")
         }
         else if(key === "login"){
             // openLoginModel()
             openLogin()
+            logEvent("langingPage" , "nav login")
         }
 
     }
@@ -106,6 +121,10 @@ const LandingPage = (props) => {
         closeSignup()
     }
 
+    const onClickTryFree = () => {
+        logEvent("langingPage" , "try it free button")
+    }
+
     // ********************************************************************************
 
     // check scrolling for display shadow of header
@@ -132,7 +151,7 @@ const LandingPage = (props) => {
                     </div>
 
                     {/* main input */}
-                    <div className="Login-signup-form">
+                    <div className="Login-signup-form" onClick={onClickTryFree}>
                         {/* <Input placeholder="name@company.com" onChange={onInputEmailChange} /> */}
                         <Button customStyle={{ margin: "0px 12px" }} href="/signup" text={information.LANDING_MAIN_SIGNUP_BUTTON} primary />
                     </div>
