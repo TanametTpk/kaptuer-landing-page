@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import Register from '../layouts/Regis'
-import '../assets/css/main.css'
 import '../assets/css/Customs.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { initGA, pageView } from '../util/analytics/ga'
