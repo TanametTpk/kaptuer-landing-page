@@ -17,6 +17,7 @@ import { connect } from 'react-redux'
 import { logIn } from '../store/actions/user'
 import { useScrollY, useModal } from '../util/hooks'
 import Loader from '../components/Loader'
+import Router from 'next/router'
 
 import { initGA, pageView, logEvent } from '../util/analytics/ga'
 
@@ -84,6 +85,7 @@ const LandingPage = (props) => {
             // open sign-up modal
             // openSignup()
             logEvent("langingPage" , "nav signup")
+            Router.push('/signup')
         }
         else if(key === "login"){
             // openLoginModel()
@@ -123,6 +125,7 @@ const LandingPage = (props) => {
 
     const onClickTryFree = () => {
         logEvent("langingPage" , "try it free button")
+        Router.push('/signup')
     }
 
     // ********************************************************************************
