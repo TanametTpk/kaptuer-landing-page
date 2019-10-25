@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const SeperateLine = (props) => {
     return(
-        <div className="Seperate-line" />
+        <div className="Seperate-line" {...props} />
     )
 }
 

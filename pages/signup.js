@@ -3,6 +3,9 @@ import Register from '../layouts/Regis'
 import '../assets/css/Customs.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { initGA, pageView } from '../util/analytics/ga'
+import Card from '../components/Card'
+
+import '../assets/css/main.css'
 
 const index = () => {
 
@@ -18,7 +21,11 @@ const index = () => {
     })
 
     return (
-        <Register />
+        <div style={{display:"flex" , justifyContent:"center" , alignItems:"center" , height:"100vh" , backgroundImage:"linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)"}}>
+            <Card customStyle={{minWidth:"500px" , padding:"48px 24px" , backgroundColor:"white" , borderRadius:"20px" }} >
+                <Register />
+            </Card>
+        </div>
     )
 }
 
