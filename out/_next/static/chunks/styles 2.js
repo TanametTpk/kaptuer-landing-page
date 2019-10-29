@@ -1,8 +1,8 @@
-webpackHotUpdate("styles",{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
-/***/ "./assets/css/customs.css":
+/***/ "./assets/css/Customs.css":
 /*!********************************!*\
-  !*** ./assets/css/customs.css ***!
+  !*** ./assets/css/Customs.css ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -29,7 +29,44 @@ webpackHotUpdate("styles",{
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1571227967742");
+            injectCss(link, link.href.split("?")[0] + "?unix=1571995068382");
+          });
+      }
+    }
+  
+
+/***/ }),
+
+/***/ "./assets/css/main.css":
+/*!*****************************!*\
+  !*** ./assets/css/main.css ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin;
+    if (true) {
+      var injectCss = function injectCss(prev, href) {
+        var link = prev.cloneNode();
+        link.href = href;
+        link.onload = function() {
+          prev.parentNode.removeChild(prev);
+        };
+        prev.stale = true;
+        prev.parentNode.insertBefore(link, prev);
+      };
+      module.hot.dispose(function() {
+        window.__webpack_reload_css__ = true;
+      });
+      if (window.__webpack_reload_css__) {
+        module.hot.__webpack_reload_css__ = false;
+        console.log("[HMR] Reloading stylesheets...");
+        var prefix = document.location.protocol + '//' + document.location.host;
+        document
+          .querySelectorAll("link[href][rel=stylesheet]")
+          .forEach(function(link) {
+            if (!link.href.match(prefix) || link.stale) return;
+            injectCss(link, link.href.split("?")[0] + "?unix=1571995067187");
           });
       }
     }
@@ -66,7 +103,7 @@ webpackHotUpdate("styles",{
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1571227968089");
+            injectCss(link, link.href.split("?")[0] + "?unix=1571995067965");
           });
       }
     }
@@ -74,5 +111,5 @@ webpackHotUpdate("styles",{
 
 /***/ })
 
-})
-//# sourceMappingURL=styles.4a020b1adc7997365c07.hot-update.js.map
+}]);
+//# sourceMappingURL=styles.js.map
