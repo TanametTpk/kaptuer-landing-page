@@ -2,6 +2,7 @@ import React , { useState } from 'react'
 import PropTypes from 'prop-types'
 import {TitleInput} from '../Input'
 import { Button } from '../Button'
+import Link from 'next/link'
 
 const LoginForm = (props) => {
 
@@ -26,7 +27,9 @@ const LoginForm = (props) => {
 
             <Button action={ () => props.onSubmit({email , password})} text="Log In" primary />
 
-            <a className="hilightLink" href="/">Forgot password?</a>
+            <Link href="/forgotPassword">
+                <a className="hilightLink" >Forgot password?</a>
+            </Link>
 
         </div>
     )

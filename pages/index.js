@@ -21,8 +21,6 @@ import Router from 'next/router'
 
 import { initGA, pageView, logEvent } from '../util/analytics/ga'
 
-import '../assets/css/main.css'
-
 // get information to display in that language
 // TODO - change this to ssr
 const information = require('../assets/info').th
