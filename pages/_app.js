@@ -7,6 +7,10 @@ import {makeStore} from "../store";
 import Storage from '../util/api/libs/jwtStorage'
 import API from '../configs/apis'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../assets/css/Customs.css'
+import '../assets/css/main.css'
+
 if (Storage.load()) window.location.href = API.APP;
 
 class MyApp extends App {

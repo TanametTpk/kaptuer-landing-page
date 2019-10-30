@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-import '../assets/css/Customs.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../components/Card'
 import { Button } from 'react-bootstrap'
 import { TitleInput } from '../components/Input'
