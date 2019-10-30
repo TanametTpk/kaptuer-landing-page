@@ -28,8 +28,6 @@ const index = (props) => {
 
         let secLeft = Math.floor(msLeft / 1000)
         setCurrectTime(secLeft)
-        console.log("tick");
-        
 
     }, isTimeRunning ? 1000 : null)
 
@@ -40,9 +38,8 @@ const index = (props) => {
 
         let { token } = props.query
         props.resetPassword({password: user.password, token}, () => {
-            Router.push('/forgotPassword')
+            Router.push('/')
         });
-
     }
 
     return (
