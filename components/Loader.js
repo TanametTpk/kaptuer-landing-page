@@ -129,7 +129,11 @@ const Container = styled.div`
     }
 }
 
-min-height: 100vh;
+position: absolute;
+top:0;
+left:0;
+width: 100vw;
+height: 100vh;
 font-family: Roboto, Arial;
 color: #ADAFB6;
 display: flex;
