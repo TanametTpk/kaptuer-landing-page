@@ -40,7 +40,7 @@ const index = (props) => {
 
         let { token } = props.query
         props.resetPassword({password: user.password, token}, () => {
-            Router.push('/forgotPassword')
+            Router.push('/')
         });
 
     }

@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'
 import { TitleInput } from '../components/Input'
 import { connect } from 'react-redux'
 import { requestRecoveryPassword } from '../store/actions/user'
+import Router from 'next/router'
 
 const index = (props) => {
     
@@ -12,6 +13,7 @@ const index = (props) => {
     const sendForgetPassword = () => {
 
         props.requestRecoveryPassword({email});
+        Router.push('/')
 
     }
 
