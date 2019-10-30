@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
-var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing/components/Card.js";
+var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing-page/components/Card.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -8040,10 +8040,10 @@ module.exports = invariant;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fresetpassword.js!./":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fresetpassword.js ***!
-  \***************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing-page%2Fpages%2Fresetpassword.js!./":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing-page%2Fpages%2Fresetpassword.js ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30470,7 +30470,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing/pages/resetpassword.js";
+var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing-page/pages/resetpassword.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
@@ -31406,14 +31406,14 @@ function useWindowsWidth() {
 
 /***/ }),
 
-/***/ 6:
-/*!*******************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fresetpassword.js ***!
-  \*******************************************************************************************************************************************************************/
+/***/ 0:
+/*!************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing-page%2Fpages%2Fresetpassword.js ***!
+  \************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fresetpassword.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fresetpassword.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing-page%2Fpages%2Fresetpassword.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fresetpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing-page%2Fpages%2Fresetpassword.js!./");
 
 
 /***/ }),
@@ -31429,5 +31429,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=resetpassword.js.map

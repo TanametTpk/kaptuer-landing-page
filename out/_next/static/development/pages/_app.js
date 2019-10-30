@@ -13858,7 +13858,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing/pages/_app.js";
+var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing-page/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
 
