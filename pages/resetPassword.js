@@ -42,7 +42,6 @@ const index = (props) => {
         props.resetPassword({password: user.password, token}, () => {
             Router.push('/')
         });
-
     }
 
     return (
