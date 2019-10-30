@@ -1,1 +1,0 @@
-# Kaptuer landing page
