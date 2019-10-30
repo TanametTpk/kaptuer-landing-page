@@ -42,9 +42,24 @@ const isLogin = () => {
 
 }
 
+const requestVerify = async (payload , errorHandler) => {
+    return await axios.post(USER + "/user/requestVerify" , payload).catch(executeHandler(errorHandler))
+}
+
+const requestRecoveryPassword = async (payload , errorHandler) => {
+    return await axios.post(USER + "/user/forgetPassword" , payload).catch(executeHandler(errorHandler))
+}
+
+const resetPassword = async (payload, errorHandler) => {
+    return await axios.get(USER + "/user/resetPassword" , payload).catch(executeHandler(errorHandler))
+}
+
 export default {
     createUser,
     login,
     logout,
-    isLogin
+    isLogin,
+    requestRecoveryPassword,
+    requestVerify,
+    resetPassword
 }

@@ -25,7 +25,7 @@ export const TitleInput = (props) => {
     let input_type = props.secure ? "password" : "text"
 
     return(
-        <div className="TitleInput-container">
+        <div className="TitleInput-container" style={props.customStyle}>
             <label>{props.title}</label>
             <input type={input_type} value={props.value} placeholder={props.placeholder} onChange={props.onChange} />
         </div>

@@ -22,3 +22,22 @@ export const logOut = () => async dispatch => {
     type: LOGOUT
   })
 }
+
+export const forgetPassword = (errorHandler) => async dispatch  => {
+
+  // dispatch()
+
+  return await API.user.requestRecoveryPassword(errorHandler)
+
+}
+
+export const resetPassword = (payload, errorHandler) => async dispatch  => {
+
+  // dispatch()
+
+  return await API.user.resetPassword(payload, errorHandler)
+}
+
+export const requestRecoveryPassword = (payload, errorHandler) => async dispatch => {
+  return await API.user.requestRecoveryPassword(payload, errorHandler)
+}
