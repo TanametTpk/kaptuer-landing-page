@@ -285,6 +285,7 @@ var TitleInput = function TitleInput(props) {
   var input_type = props.secure ? "password" : "text";
   return __jsx("div", {
     className: "TitleInput-container",
+    style: props.customStyle,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
@@ -22534,9 +22535,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_actions_user__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../store/actions/user */ "./store/actions/user.js");
 /* harmony import */ var _util_hooks__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../util/hooks */ "./util/hooks/index.js");
 /* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/Loader */ "./components/Loader.js");
-/* harmony import */ var _util_analytics_ga__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../util/analytics/ga */ "./util/analytics/ga.js");
-/* harmony import */ var _assets_css_main_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../assets/css/main.css */ "./assets/css/main.css");
-/* harmony import */ var _assets_css_main_css__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_assets_css_main_css__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _util_analytics_ga__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../util/analytics/ga */ "./util/analytics/ga.js");
+/* harmony import */ var _assets_css_main_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../assets/css/main.css */ "./assets/css/main.css");
+/* harmony import */ var _assets_css_main_css__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_assets_css_main_css__WEBPACK_IMPORTED_MODULE_24__);
 
 
 
@@ -22549,6 +22552,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 
  // import Input from '../components/Input'
+
 
 
 
@@ -22598,8 +22602,8 @@ var LandingPage = function LandingPage(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
     // Analytic
     if (!window.GA_INITIALIZED) {
-      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_22__["initGA"])();
-      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_22__["pageView"])();
+      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_23__["initGA"])();
+      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_23__["pageView"])();
       window.GA_INITIALIZED = true;
     }
   });
@@ -22659,11 +22663,12 @@ var LandingPage = function LandingPage(props) {
     if (key === "signup") {
       // open sign-up modal
       // openSignup()
-      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_22__["logEvent"])("langingPage", "nav signup");
+      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_23__["logEvent"])("langingPage", "nav signup");
+      next_router__WEBPACK_IMPORTED_MODULE_22___default.a.push('/signup');
     } else if (key === "login") {
       // openLoginModel()
       openLogin();
-      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_22__["logEvent"])("langingPage", "nav login");
+      Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_23__["logEvent"])("langingPage", "nav login");
     }
   };
 
@@ -22694,7 +22699,8 @@ var LandingPage = function LandingPage(props) {
   };
 
   var onClickTryFree = function onClickTryFree() {
-    Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_22__["logEvent"])("langingPage", "try it free button");
+    Object(_util_analytics_ga__WEBPACK_IMPORTED_MODULE_23__["logEvent"])("langingPage", "try it free button");
+    next_router__WEBPACK_IMPORTED_MODULE_22___default.a.push('/signup');
   }; // ********************************************************************************
   // check scrolling for display shadow of header
 
@@ -22703,7 +22709,7 @@ var LandingPage = function LandingPage(props) {
   if (isLoad) return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_21__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 136
     },
     __self: this
   });
@@ -22711,7 +22717,7 @@ var LandingPage = function LandingPage(props) {
     className: "Landing-page",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 139
     },
     __self: this
   }, __jsx(_components_custom_KaptuerHeader__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -22721,7 +22727,7 @@ var LandingPage = function LandingPage(props) {
     shadow: shadow,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 142
     },
     __self: this
   }), __jsx(_components_Section__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -22729,7 +22735,7 @@ var LandingPage = function LandingPage(props) {
     height: "100vh",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 145
     },
     __self: this
   }, __jsx(_components_Stack__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -22737,7 +22743,7 @@ var LandingPage = function LandingPage(props) {
     maxWidth: "50%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 146
     },
     __self: this
   }, __jsx("div", {
@@ -22747,7 +22753,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 149
     },
     __self: this
   }, information.LANDING_MAIN_SLOGAN), __jsx("div", {
@@ -22757,7 +22763,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 152
     },
     __self: this
   }, information.LANDING_MAIN_DEF), __jsx("div", {
@@ -22765,7 +22771,7 @@ var LandingPage = function LandingPage(props) {
     onClick: onClickTryFree,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 157
     },
     __self: this
   }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_6__["Button"], {
@@ -22777,7 +22783,7 @@ var LandingPage = function LandingPage(props) {
     primary: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 159
     },
     __self: this
   })))), __jsx(react_modal__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -22789,7 +22795,7 @@ var LandingPage = function LandingPage(props) {
     overlayClassName: "Modal-Overlay-login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 166
     },
     __self: this
   }, __jsx(_components_Stack__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -22797,7 +22803,7 @@ var LandingPage = function LandingPage(props) {
     maxWidth: "70%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 176
     },
     __self: this
   }, __jsx("div", {
@@ -22808,7 +22814,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 178
     },
     __self: this
   }, information.LANDING_MODAL_TITLE), __jsx("div", {
@@ -22819,14 +22825,14 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 182
     },
     __self: this
   }, information.LANDING_MODAL_DESCRIPTION)), __jsx("div", {
     className: "Login-signup-form",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 189
     },
     __self: this
   }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_6__["Button"], {
@@ -22838,7 +22844,7 @@ var LandingPage = function LandingPage(props) {
     primary: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 191
     },
     __self: this
   })), __jsx(_components_Stack__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -22846,7 +22852,7 @@ var LandingPage = function LandingPage(props) {
     maxWidth: "50%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 195
     },
     __self: this
   }, __jsx("div", {
@@ -22857,13 +22863,13 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 197
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 198
     },
     __self: this
   }, information.LANDING_MODAL_POLICIES[0], " ", __jsx("a", {
@@ -22871,7 +22877,7 @@ var LandingPage = function LandingPage(props) {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 199
     },
     __self: this
   }, "Privacy Policy"), " ", information.LANDING_MODAL_POLICIES[1], " ", __jsx("a", {
@@ -22879,7 +22885,7 @@ var LandingPage = function LandingPage(props) {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 199
     },
     __self: this
   }, "Terms of Service."))))), __jsx(react_modal__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -22890,7 +22896,7 @@ var LandingPage = function LandingPage(props) {
     overlayClassName: "Modal-Overlay-login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 209
     },
     __self: this
   }, __jsx("label", {
@@ -22899,7 +22905,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 218
     },
     __self: this
   }, "Log In"), __jsx(_components_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -22909,7 +22915,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 221
     },
     __self: this
   }, __jsx(react_facebook_login__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -22921,7 +22927,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220
+      lineNumber: 223
     },
     __self: this
   }), __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -22933,14 +22939,14 @@ var LandingPage = function LandingPage(props) {
     cookiePolicy: 'single_host_origin',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 226
+      lineNumber: 229
     },
     __self: this
   })), __jsx(_components_SeperateLine__WEBPACK_IMPORTED_MODULE_13__["TitleSeperateLine"], {
     title: "OR",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 235
+      lineNumber: 238
     },
     __self: this
   }), __jsx(_components_custom_LoginForm__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -22949,7 +22955,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238
+      lineNumber: 241
     },
     __self: this
   }), __jsx("p", {
@@ -22958,7 +22964,7 @@ var LandingPage = function LandingPage(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
+      lineNumber: 244
     },
     __self: this
   }, "Don\u2019t have an account? ", __jsx("label", {
@@ -22966,7 +22972,7 @@ var LandingPage = function LandingPage(props) {
     onClick: openSignupModal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
+      lineNumber: 244
     },
     __self: this
   }, "Sign up"))));
@@ -22989,13 +22995,16 @@ var mapDispatchToProps = {
 /*!*******************************!*\
   !*** ./store/actions/user.js ***!
   \*******************************/
-/*! exports provided: logIn, logOut */
+/*! exports provided: logIn, logOut, forgetPassword, resetPassword, requestRecoveryPassword */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logIn", function() { return logIn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logOut", function() { return logOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "forgetPassword", function() { return forgetPassword; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetPassword", function() { return resetPassword; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestRecoveryPassword", function() { return requestRecoveryPassword; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
@@ -23080,6 +23089,99 @@ var logOut = function logOut() {
 
       return function (_x2) {
         return _ref2.apply(this, arguments);
+      };
+    }()
+  );
+};
+var forgetPassword = function forgetPassword(errorHandler) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _util_api__WEBPACK_IMPORTED_MODULE_3__["default"].user.requestRecoveryPassword(errorHandler);
+
+              case 2:
+                return _context3.abrupt("return", _context3.sent);
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function (_x3) {
+        return _ref3.apply(this, arguments);
+      };
+    }()
+  );
+};
+var resetPassword = function resetPassword(payload, errorHandler) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref4 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return _util_api__WEBPACK_IMPORTED_MODULE_3__["default"].user.resetPassword(payload, errorHandler);
+
+              case 2:
+                return _context4.abrupt("return", _context4.sent);
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      return function (_x4) {
+        return _ref4.apply(this, arguments);
+      };
+    }()
+  );
+};
+var requestRecoveryPassword = function requestRecoveryPassword(payload, errorHandler) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref5 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return _util_api__WEBPACK_IMPORTED_MODULE_3__["default"].user.requestRecoveryPassword(payload, errorHandler);
+
+              case 2:
+                return _context5.abrupt("return", _context5.sent);
+
+              case 3:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }));
+
+      return function (_x5) {
+        return _ref5.apply(this, arguments);
       };
     }()
   );
@@ -23259,11 +23361,101 @@ var isLogin = function isLogin() {
   return token ? token.length > 0 : false;
 };
 
+var requestVerify =
+/*#__PURE__*/
+function () {
+  var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(payload, errorHandler) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(USER + "/user/requestVerify", payload)["catch"](Object(_libs_executeHandler__WEBPACK_IMPORTED_MODULE_5__["default"])(errorHandler));
+
+          case 2:
+            return _context3.abrupt("return", _context3.sent);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function requestVerify(_x5, _x6) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+var requestRecoveryPassword =
+/*#__PURE__*/
+function () {
+  var _ref4 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(payload, errorHandler) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(USER + "/user/forgetPassword", payload)["catch"](Object(_libs_executeHandler__WEBPACK_IMPORTED_MODULE_5__["default"])(errorHandler));
+
+          case 2:
+            return _context4.abrupt("return", _context4.sent);
+
+          case 3:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function requestRecoveryPassword(_x7, _x8) {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+var resetPassword =
+/*#__PURE__*/
+function () {
+  var _ref5 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(payload, errorHandler) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(USER + "/user/resetPassword", payload)["catch"](Object(_libs_executeHandler__WEBPACK_IMPORTED_MODULE_5__["default"])(errorHandler));
+
+          case 2:
+            return _context5.abrupt("return", _context5.sent);
+
+          case 3:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+
+  return function resetPassword(_x9, _x10) {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   createUser: createUser,
   login: login,
   logout: logout,
-  isLogin: isLogin
+  isLogin: isLogin,
+  requestRecoveryPassword: requestRecoveryPassword,
+  requestVerify: requestVerify,
+  resetPassword: resetPassword
 });
 
 /***/ }),
