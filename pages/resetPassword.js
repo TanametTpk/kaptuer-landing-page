@@ -28,8 +28,6 @@ const index = (props) => {
 
         let secLeft = Math.floor(msLeft / 1000)
         setCurrectTime(secLeft)
-        console.log("tick");
-        
 
     }, isTimeRunning ? 1000 : null)
 
