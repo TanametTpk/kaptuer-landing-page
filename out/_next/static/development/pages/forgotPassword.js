@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/forgotPassword.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/forgotpassword.js"],{
 
 /***/ "./components/Card.js":
 /*!****************************!*\
@@ -7043,21 +7043,21 @@ module.exports = invariant;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FforgotPassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2FforgotPassword.js!./":
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fforgotpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fforgotpassword.js!./":
 /*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FforgotPassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2FforgotPassword.js ***!
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fforgotpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fforgotpassword.js ***!
   \*****************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/forgotPassword", function() {
-      var mod = __webpack_require__(/*! ./pages/forgotPassword.js */ "./pages/forgotPassword.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/forgotpassword", function() {
+      var mod = __webpack_require__(/*! ./pages/forgotpassword.js */ "./pages/forgotpassword.js")
       if(true) {
-        module.hot.accept(/*! ./pages/forgotPassword.js */ "./pages/forgotPassword.js", function() {
-          if(!next.router.components["/forgotPassword"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/forgotPassword.js */ "./pages/forgotPassword.js")
-          next.router.update("/forgotPassword", updatedPage)
+        module.hot.accept(/*! ./pages/forgotpassword.js */ "./pages/forgotpassword.js", function() {
+          if(!next.router.components["/forgotpassword"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/forgotpassword.js */ "./pages/forgotpassword.js")
+          next.router.update("/forgotpassword", updatedPage)
         })
       }
       return mod
@@ -26435,9 +26435,9 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./pages/forgotPassword.js":
+/***/ "./pages/forgotpassword.js":
 /*!*********************************!*\
-  !*** ./pages/forgotPassword.js ***!
+  !*** ./pages/forgotpassword.js ***!
   \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -26455,7 +26455,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Input */ "./components/Input.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_actions_user__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../store/actions/user */ "./store/actions/user.js");
-var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing/pages/forgotPassword.js";
+var _jsxFileName = "/Users/tanamet/Documents/Startup/kaptuer-landing/pages/forgotpassword.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -27121,14 +27121,14 @@ var clear = function clear() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 7:
 /*!*********************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2FforgotPassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2FforgotPassword.js ***!
+  !*** multi next-client-pages-loader?page=%2Fforgotpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fforgotpassword.js ***!
   \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FforgotPassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2FforgotPassword.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FforgotPassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2FforgotPassword.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fforgotpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fforgotpassword.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fforgotpassword&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Fforgotpassword.js!./");
 
 
 /***/ }),
@@ -27144,5 +27144,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js","styles"]]]);
-//# sourceMappingURL=forgotPassword.js.map
+},[[7,"static/runtime/webpack.js","styles"]]]);
+//# sourceMappingURL=forgotpassword.js.map

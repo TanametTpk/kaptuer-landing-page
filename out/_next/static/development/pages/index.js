@@ -23860,7 +23860,7 @@ function useWindowsWidth() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 4:
 /*!**********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Ftanamet%2FDocuments%2FStartup%2Fkaptuer-landing%2Fpages%2Findex.js ***!
   \**********************************************************************************************************************************************/
@@ -23883,5 +23883,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[4,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
