@@ -1,15 +1,16 @@
 import React, {useState} from 'react'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login'
-import { Form, Button, Row, Col, Container } from 'react-bootstrap'
+import { Form, Button, Row, Col, Container, Modal } from 'react-bootstrap'
 import Loader from '../../components/Loader'
 
 import { FB_TOKEN, GOOGLE_TOKEN } from '../../configs/oauth'
 import api from '../../util/api'
 import API from '../../configs/apis'
 import signable from '../../util/api/libs/signable'
-import { useFormHandle } from '../../util/hooks'
+import { useFormHandle, useModal } from '../../util/hooks'
 import {SeperateLine} from '../../components/SeperateLine'
+import Validator from '../../util/api/libs/passwordValidator'
 
 import Link from 'next/link'
 
@@ -21,6 +22,8 @@ function Regis() {
     password: "",
   });
 
+  const [ showModal, openModal, closeModal ] = useModal(false)
+
   const [isLoad, setLoad] = useState(false)
   const [isClickSignup, setClickSignup] = useState(false)
 
@@ -28,6 +31,11 @@ function Regis() {
 
     setClickSignup(true)
     if (payload.password !== payload.confirmpassword || !payload.name || !payload.email) return
+
+    if (!Validator.validate(payload.password)) {
+      openModal()
+      return
+    }
 
     let res = await api.user.createUser(signable[method](payload))
     if (res.status === 200) {
@@ -109,6 +117,35 @@ function Regis() {
           </Row>
         </Col>
       </Row>
+
+      <Modal
+        show={showModal}
+        onHide={() => closeModal()}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Your password is too weak.
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Needed</h4>
+          <p>
+            password length between 8 - 100 characters,
+            at least 1 uppercase,
+            at least 1 lowercase,
+            at least 1 digit,
+            at lease 1 symbol
+            and no space
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => closeModal()}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
     </Container>
   )
 }

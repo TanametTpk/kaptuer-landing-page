@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react'
 import Card from '../components/Card'
 import { connect } from 'react-redux'
 import { resetPassword } from '../store/actions/user'
-import { Form, Button, Toast } from 'react-bootstrap'
-import { useFormHandle, useInterval } from '../util/hooks'
+import { Form, Button, Toast, Modal } from 'react-bootstrap'
+import { useFormHandle, useInterval, useModal } from '../util/hooks'
 import Router from 'next/router'
+import Validator from '../util/api/libs/passwordValidator'
 
 const index = (props) => {
     
@@ -12,6 +13,8 @@ const index = (props) => {
         password: "",
         confirmpassword: "",
     });
+
+    const [ showModal, openModal, closeModal ] = useModal(false)
 
     const [isClick, setClick] = useState(false)
     const [currentTime, setCurrectTime] = useState(0)
@@ -35,6 +38,11 @@ const index = (props) => {
 
         setClick(true)
         if (!user.password || !user.confirmpassword || user.password !== user.confirmpassword) return
+
+        if (!Validator.validate(user.password)) {
+            openModal()
+            return
+        }
 
         let { token } = props.query
         props.resetPassword({password: user.password, token});
@@ -86,6 +94,33 @@ const index = (props) => {
                 </div>
 
             </Card>
+            <Modal
+                show={showModal}
+                onHide={() => closeModal()}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Your password is too weak.
+                </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <h4>Needed</h4>
+                <p>
+                    password length between 8 - 100 characters,
+                    at least 1 uppercase,
+                    at least 1 lowercase,
+                    at least 1 digit,
+                    at lease 1 symbol
+                    and no space
+                </p>
+                </Modal.Body>
+                <Modal.Footer>
+                <Button onClick={() => closeModal()}>Close</Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }
