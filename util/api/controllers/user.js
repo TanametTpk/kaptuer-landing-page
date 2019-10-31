@@ -51,7 +51,7 @@ const requestRecoveryPassword = async (payload , errorHandler) => {
 }
 
 const resetPassword = async (payload, errorHandler) => {
-    return await axios.get(USER + "/user/resetPassword" , payload).catch(executeHandler(errorHandler))
+    return await axios.put(USER + "/user" , payload).catch(executeHandler(errorHandler))
 }
 
 export default {

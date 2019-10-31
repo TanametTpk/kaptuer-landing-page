@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
-import '../assets/css/Customs.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../components/Card'
 import { Button } from 'react-bootstrap'
 import { TitleInput } from '../components/Input'
 import { connect } from 'react-redux'
 import { requestRecoveryPassword } from '../store/actions/user'
+import Router from 'next/router'
 
 const index = (props) => {
     
@@ -14,6 +13,7 @@ const index = (props) => {
     const sendForgetPassword = () => {
 
         props.requestRecoveryPassword({email});
+        Router.push('/')
 
     }
 
