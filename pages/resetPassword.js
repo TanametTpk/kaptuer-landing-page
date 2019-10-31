@@ -37,9 +37,8 @@ const index = (props) => {
         if (!user.password || !user.confirmpassword || user.password !== user.confirmpassword) return
 
         let { token } = props.query
-        props.resetPassword({password: user.password, token}, () => {
-            Router.push('/')
-        });
+        props.resetPassword({password: user.password, token});
+        Router.push('/')
     }
 
     return (
