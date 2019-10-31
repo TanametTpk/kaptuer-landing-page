@@ -113,7 +113,7 @@ const index = (props) => {
                     at least 1 uppercase,
                     at least 1 lowercase,
                     at least 1 digit,
-                    at lease 1 symbol
+                    at least 1 symbol
                     and no space
                 </p>
                 </Modal.Body>
