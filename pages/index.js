@@ -18,6 +18,7 @@ import { logIn } from '../store/actions/user'
 import { useScrollY, useModal } from '../util/hooks'
 import Loader from '../components/Loader'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import { initGA, pageView, logEvent } from '../util/analytics/ga'
 
