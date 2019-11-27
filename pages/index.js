@@ -18,6 +18,7 @@ import { logIn } from '../store/actions/user'
 import { useScrollY, useModal } from '../util/hooks'
 import Loader from '../components/Loader'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import { initGA, pageView, logEvent } from '../util/analytics/ga'
 
@@ -135,6 +136,19 @@ const LandingPage = (props) => {
 
     return (
         <div className="Landing-page" >
+
+            <Head>
+                <title>Kaptuer | System builder and Web builder</title>
+                <meta
+                name="viewport"
+                content="initial-scale=1.0, width=device-width"
+                key="viewport"
+                />
+                <meta http-equiv="content-language" content="th" />
+                <meta name="description" content={information.LANDING_MAIN_DEF} />
+                <meta name="keywords" content="website builder,no code,สร้างเว็ป,ไม่โค้ด,เว็บไซต์สำเร็จรูปฟรี,วิธีทําเว็ป,สร้างเว็ปฟรี"/>
+                <meta name="revisit-after" content="7 days" />
+            </Head>
 
             {/* custom header */}
             <KaptuerHeader logo="/logo.svg" action={headerButtonOnClick} buttons={buttons} shadow={shadow} />
