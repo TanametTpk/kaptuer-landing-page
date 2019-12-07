@@ -147,7 +147,6 @@ const LandingPage = (props) => {
                 <meta http-equiv="content-language" content="th" />
                 <meta name="description" content={information.LANDING_MAIN_DEF} />
                 <meta name="keywords" content="website builder,no code,สร้างเว็ป,ไม่โค้ด,เว็บไซต์สำเร็จรูปฟรี,วิธีทําเว็ป,สร้างเว็ปฟรี"/>
-                <meta name="revisit-after" content="7 days" />
             </Head>
 
             {/* custom header */}
