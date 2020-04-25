@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/Customs.css'
 import '../assets/css/main.css'
 
-if (Storage.load()) window.location.href = API.APP;
+// if (Storage.load()) window.location.href = API.APP;
 
 class MyApp extends App {
 
